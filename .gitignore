@@ -1,0 +1,5 @@
+# fichiers propres à l'IDE netbeans (tout le répertoire et ses descendants)
+nbproject/
+# fichiers générés par l'IDE avec l'outil de construction maven
+target/
+
