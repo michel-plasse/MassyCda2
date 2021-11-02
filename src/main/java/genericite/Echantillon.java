@@ -14,8 +14,12 @@ public class Echantillon {
   private int taille;
   private ArrayList<Double> valeurs;
 
+  public Echantillon(){
+      valeurs = new ArrayList<>();
+  }
   /**
    * Nombre d'éléments de l'échantillon
+   * @return  nb d'elements dans l'echantillon
    */
   public int getTaille() {
     return valeurs.size();
@@ -23,6 +27,7 @@ public class Echantillon {
 
   /**
    * Valeur minimum. Requiert getTaille() > 0
+   * @return la valeur minimum dans l'Echantillon
    */
   public double getMinimum() {
     // Le require
@@ -41,6 +46,7 @@ public class Echantillon {
 
   /**
    * Valeur moyenne. Requiert getTaille() > 0
+   * @return la moyenne des elements de l'echantillon
    */
   public double getMoyenne() {
     // Le require
@@ -56,6 +62,7 @@ public class Echantillon {
 
   /**
    * Valeur maximum. Requiert getTaille() > 0
+   * @return  la valeur maximum dans l'Echantillon
    */
   public double getMaximum() {
     // Le require
@@ -75,6 +82,7 @@ public class Echantillon {
   /**
    * Ajouter une valeur à l'échantillon. Garantit que getTaille() est
    * incrémentée de 1.
+   * @param valeur: valeur a ajouter
    */
   public void ajouter(double valeur) {
     valeurs.add(valeur);
@@ -84,6 +92,7 @@ public class Echantillon {
 
   /**
    * Conditions toujours vraies
+   * @return true si les nvariants sont ok
    */
   public boolean estInvariantOk() {
     assert getTaille() >= 0 : "taille négative";

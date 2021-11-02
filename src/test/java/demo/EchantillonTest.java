@@ -56,5 +56,4 @@ public class EchantillonTest {
     System.out.println("getMaximum");
     assertEquals(8.5, echantillon.getMaximum(), precision);
   }
-  
 }
