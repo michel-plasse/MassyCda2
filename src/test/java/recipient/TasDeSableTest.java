@@ -5,17 +5,25 @@ import org.junit.jupiter.api.Test;
 
 public class TasDeSableTest {
 
-  @Test
-  public void testDeplacerTas() {
-    Recipient tasInitial = new Recipient(4, 4);
-    Recipient brouette = new Recipient(0, 3);
-    Recipient tasFinal = new Recipient(5, 10);
+    public TasDeSableTest() {
+    }
 
-    TasDeSable instance = new TasDeSable(tasInitial, brouette, tasFinal);
-    instance.deplacerTas();
-    assertTrue(tasInitial.estVide());
-    assertTrue(brouette.estVide());
-    assertEquals(9, tasFinal.getQuantite());
-  }
+    @Test
+    public void testDeplacerTas() {
+        // Given (initialisation): 
+        Recipient tasInitial = new Recipient(5, 5);
+        Recipient brouette = new Recipient(1, 2);
+        Recipient tasFinal = new Recipient(3, 10);
+
+        TasDeSable instance = new TasDeSable(tasInitial, brouette, tasFinal);
+        assert instance.peutDeplacerTas() : "Le tas ne peut pas être déplacé";
+
+        // Where:
+        instance.deplacerTas();
+        // Then:
+        assertTrue(tasInitial.estVide());
+        assertTrue(brouette.estVide());
+        assertEquals(9, tasFinal.getQuantite());
+    }
 
 }
