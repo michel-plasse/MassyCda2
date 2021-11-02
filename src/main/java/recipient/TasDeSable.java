@@ -43,4 +43,8 @@ public class TasDeSable {
     }
 
   }
+  public boolean peutDeplacerTas(){
+      return tasFinal.getEspaceLibre()>=tasInitial.getQuantite()+brouette.getQuantite();
+      
+  }
 }

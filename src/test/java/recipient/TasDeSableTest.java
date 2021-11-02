@@ -17,5 +17,16 @@ public class TasDeSableTest {
     assertTrue(brouette.estVide());
     assertEquals(9, tasFinal.getQuantite());
   }
-
+public void testPeutDeplacerTas(){
+    Recipient tasInitial = new Recipient(4, 4);
+    Recipient brouette = new Recipient(0, 3);
+    Recipient tasFinal = new Recipient(5, 10);
+    TasDeSable instance = new TasDeSable(tasInitial, brouette, tasFinal);
+    assertTrue(instance.peutDeplacerTas());
+    tasInitial = new Recipient(9, 14);
+    brouette = new Recipient(2, 3);
+    tasFinal = new Recipient(5, 10);
+    instance = new TasDeSable(tasInitial, brouette, tasFinal);
+    assertTrue(!instance.peutDeplacerTas());
+}
 }
