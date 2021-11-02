@@ -1,4 +1,7 @@
-package demo;
+package genericite;
+
+import demo.*;
+import java.util.ArrayList;
 
 /**
  * Echantillon de valeurs, pourvu d'une taille, un minimum, une moyenne,
@@ -9,14 +12,20 @@ package demo;
 public class Echantillon {
   // Après l'instanciation, les nombres valent la valeur par défaut
   // d'un nombre en Java, à savoir 0 (entiers) ou 0.0 (nombres décimaux).
-  private int taille;
-  private double minimum, somme, maximum;
+  private ArrayList<Double> valeurs;
 
+  /**
+   * Constructeur d'echantillon avec liste de valeurs
+   * @param valeurs 
+   */
+  public Echantillon(){
+      this.valeurs=new ArrayList<Double>();
+  }
   /**
    * Nombre d'éléments de l'échantillon
    */
   public int getTaille() {
-    return taille;
+    return valeurs.size();
   }
  
   /**
@@ -24,25 +33,41 @@ public class Echantillon {
    */
   public double getMinimum() {
     // Le require
-    assert taille > 0;
+    assert getTaille() > 0;
     // Le code
-    return minimum;
+    double result = valeurs.get(0);
+    for (int i=1;i<valeurs.size();i++){
+        if (valeurs.get(i)<result){
+            result = valeurs.get(i);    
+        }
+    }
+    return result;
   }
 
   /**
    * Valeur moyenne. Requiert getTaille() > 0
    */
   public double getMoyenne() {
-    assert taille > 0;
-    return somme / taille;
+    assert getTaille() > 0;
+    double somme = valeurs.get(0);
+    for (int i=1;i<valeurs.size();i++){
+        somme+=valeurs.get(i);
+    }
+    return somme/valeurs.size();
   }
 
   /**
    * Valeur maximum. Requiert getTaille() > 0
    */
   public double getMaximum() {
-    assert taille > 0;
-    return maximum;
+    assert getTaille() > 0;
+    double result = valeurs.get(0);
+    for (int i=1;i<valeurs.size();i++){
+        if (valeurs.get(i)>result){
+            result = valeurs.get(i);    
+        }
+    }
+    return result;
   }
 
   /**
@@ -50,15 +75,7 @@ public class Echantillon {
    * incrémentée de 1.
    */
   public void ajouter(double valeur) {
-    if (taille == 0) {
-      minimum = valeur;
-      maximum = valeur;
-    } else {
-      minimum = Math.min(minimum, valeur);
-      maximum = Math.max(maximum, valeur);
-    }
-    taille++;
-    somme += valeur;
+    valeurs.add(valeur);
     // les invariants doivent etre respectes
     assert estInvariantOk();
   }
