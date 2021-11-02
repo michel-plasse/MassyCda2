@@ -46,6 +46,7 @@ public class TasDeSable {
   }
   
   public boolean peutDeplacerTas(){
-      return tasInitial.getQuantite() + ;
+      return true;
+      
   }
 }
