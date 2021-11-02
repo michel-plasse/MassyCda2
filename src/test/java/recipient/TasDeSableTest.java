@@ -18,4 +18,44 @@ public class TasDeSableTest {
     assertEquals(9, tasFinal.getQuantite());
   }
 
+    @org.junit.jupiter.api.Test
+    public void testGetTasInitial() {
+        System.out.println("getTasInitial");
+        TasDeSable instance = null;
+        Recipient expResult = null;
+        Recipient result = instance.getTasInitial();
+        assertEquals(expResult, result);
+        fail("The test case is a prototype.");
+    }
+
+    @org.junit.jupiter.api.Test
+    public void testGetBrouette() {
+        System.out.println("getBrouette");
+        TasDeSable instance = null;
+        Recipient expResult = null;
+        Recipient result = instance.getBrouette();
+        assertEquals(expResult, result);
+        fail("The test case is a prototype.");
+    }
+
+    @org.junit.jupiter.api.Test
+    public void testGetTasFinal() {
+        System.out.println("getTasFinal");
+        TasDeSable instance = null;
+        Recipient expResult = null;
+        Recipient result = instance.getTasFinal();
+        assertEquals(expResult, result);
+        fail("The test case is a prototype.");
+    }
+
+    @org.junit.jupiter.api.Test
+    public void testPeutDeplacerTas() {
+        System.out.println("peutDeplacerTas");
+        TasDeSable instance = null;
+        boolean expResult = false;
+        boolean result = instance.peutDeplacerTas();
+        assertEquals(expResult, result);
+        fail("The test case is a prototype.");
+    }
+
 }
