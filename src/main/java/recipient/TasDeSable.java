@@ -29,7 +29,7 @@ public class TasDeSable {
      * Déplace le sable du tas initial vers le tas final. Requiert que la
      * brouette soit vide au départ. Hypothèse à discuter, si nous la
      * supprimons, il faut revoir le sens et les contrats de cette opération.
-     * Quel est le prérequis avec cette hypothèse, et quel serait-il sans elle ?
+     * Quel est le prérequis avec cette hypothèse , et quel serait-il sans elle ?
      * Garantit que getTasInitial().estVide() et getBrouette().estVide().
      */
     void deplacerTas() {
