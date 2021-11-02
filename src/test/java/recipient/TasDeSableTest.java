@@ -36,6 +36,5 @@ public class TasDeSableTest {
         TasDeSable instance;
         instance = new TasDeSable(tasInitial, brouette, tasFinal);
         assertFalse(instance.peutDeplacerTas());
-;
     }
 }
