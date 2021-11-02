@@ -5,7 +5,7 @@ package recipient;
  */
 public class TasDeSable {
 
-    private Recipient tasInitial, brouette, tasFinal;
+  private Recipient tasInitial, brouette, tasFinal;
 
   public TasDeSable(Recipient tasInitial, Recipient brouette, Recipient tasFinal) {
     this.tasInitial = tasInitial;
