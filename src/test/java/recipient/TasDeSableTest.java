@@ -13,6 +13,7 @@ public class TasDeSableTest {
 
     TasDeSable instance = new TasDeSable(tasInitial, brouette, tasFinal);
     instance.deplacerTas();
+    assertTrue(instance.peutDeplacerTas());
     assertTrue(tasInitial.estVide());
     assertTrue(brouette.estVide());
     assertEquals(9, tasFinal.getQuantite());
