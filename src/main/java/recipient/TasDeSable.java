@@ -35,6 +35,7 @@ public class TasDeSable {
    * Garantit que getTasInitial().estVide() et getBrouette().estVide().
    */
   void deplacerTas() {
+    assert peutDeplacerTas():"Pas assez de place dans le tas final pour déplacer le tas initial";
     while (!tasInitial.estVide()) {
       while (!brouette.estPlein() && !tasInitial.estVide()) {
         tasInitial.mettreUnDans(brouette);
@@ -42,5 +43,9 @@ public class TasDeSable {
       brouette.viderDans(tasFinal);
     }
 
+  }
+  
+  public boolean peutDeplacerTas(){
+      return tasInitial.getQuantite() + ;
   }
 }
