@@ -7,6 +7,7 @@ public class DirecteurCommercial extends Commercial {
   
   public DirecteurCommercial(double salaireDeBase) {
     super(salaireDeBase);
+    commerciaux = new ArrayList<>();
   }
 
   public ArrayList<Commercial> getCommerciaux() {
@@ -15,7 +16,11 @@ public class DirecteurCommercial extends Commercial {
 
   @Override
   public double getSalaire() {
-    return super.getSalaire();
+    double result = 0;
+    for (int i = 0 ; i < commerciaux.size() ; i++) {
+      result += commerciaux.get(i).getCommission();
+    }
+    return super.getSalaire() + .2 * result;
   }
   
   
