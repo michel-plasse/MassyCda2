@@ -29,5 +29,4 @@ public class Commercial extends Salarie{
         return super.getSalaire(); //To change body of generated methods, choose Tools | Templates.
     }
    
-    
-jjggk
+}
