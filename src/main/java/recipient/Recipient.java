@@ -1,5 +1,8 @@
 package recipient;
 
+import heritage.Verre;
+import java.util.ArrayList;
+
 /**
  *
  * @author michel
