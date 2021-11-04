@@ -10,6 +10,7 @@ public class Entreprise {
      * Initialise une entreprise sans salariés (la liste sera vide)
      */
     public Entreprise() {
+        salaries=new ArrayList<>();
     }
 
     public ArrayList<Salarie> getSalaries() {
@@ -21,5 +22,6 @@ public class Entreprise {
         for (int i = 0; i < salaries.size(); i++) {
             result += salaries.get(i).getSalaire();
         }
+        return result;
     }
 }
