@@ -1,7 +1,5 @@
 package recipient.v2;
 
-import recipient.*;
-
 /**
  *
  * @author michel
