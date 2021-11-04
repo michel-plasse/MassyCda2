@@ -1,31 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package heritage;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.ArrayList;
 
-/**
- *
- * @author Florian
- */
-public class CommercialTest {
+public class DirecteurCommercial extends Commercial {
+  private ArrayList<Commercial> commerciaux;
+  
+  public DirecteurCommercial(double salaireDeBase) {
+    super(salaireDeBase);
+    commerciaux = new ArrayList<>();
+  }
 
-    public CommercialTest() {
+  public ArrayList<Commercial> getCommerciaux() {
+    return commerciaux;
+  }
+
+  @Override
+  public double getSalaire() {
+    double result = 0;
+    for (int i = 0 ; i < commerciaux.size() ; i++) {
+      result += commerciaux.get(i).getCommission();
     }
-
-    @Test
-    public void testGetSalaire() {
-        System.out.println("getSalaire");
-        Commercial instance = new Commercial(2000);
-        instance.setCommission(150);
-        assertEquals(2150,instance.getSalaire(),0.001);
-    }
-
+    return super.getSalaire() + .2 * result;
+  }
+  
+  
 }
-
-
-
