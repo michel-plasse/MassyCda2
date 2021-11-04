@@ -23,4 +23,14 @@ public class CantineTest {
         assertEquals(2,bac.getQuantite());
     }
     
+    @Test
+    public void testServirSiPossible(){
+        Recipient cuisine = new Recipient(10,25);
+        Recipient bac = new Recipient(0,5);
+        Cantine instance = new Cantine(13,bac,cuisine);
+        instance.servirSiPossible();
+        assertTrue(cuisine.estVide());
+        assertTrue(bac.estVide());
+    }
+    
 }

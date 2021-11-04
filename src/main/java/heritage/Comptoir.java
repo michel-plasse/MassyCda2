@@ -1,4 +1,3 @@
-
 package heritage;
 
 import java.util.ArrayList;
@@ -9,19 +8,21 @@ import recipient.Recipient;
  * @author Florian
  */
 public class Comptoir {
-    private ArrayList<Verre> verres;
-    private Recipient tonneauRaisin,tonneauOrange;
 
-    /**Le comptoir aura une liste vide de Verres,
-     * un tonneau d'orange rempli de quantiteOrange verres et un 
-     * tonneau de raisin rempli de quantiteRaisin verres.
-     * 
+    private ArrayList<Verre> verres;
+    private Recipient tonneauRaisin, tonneauOrange;
+
+    /**
+     * Le comptoir aura une liste vide de Verres, un tonneau d'orange rempli de
+     * quantiteOrange verres et un tonneau de raisin rempli de quantiteRaisin
+     * verres.
+     *
      * @param quantiteOrange
-     * @param quantiteRaisin 
+     * @param quantiteRaisin
      */
     public Comptoir(int quantiteOrange, int quantiteRaisin) {
-        tonneauOrange = new Recipient(quantiteOrange,quantiteOrange);
-        tonneauRaisin = new Recipient(quantiteRaisin,quantiteRaisin);
+        tonneauOrange = new Recipient(quantiteOrange, quantiteOrange);
+        tonneauRaisin = new Recipient(quantiteRaisin, quantiteRaisin);
         verres = new ArrayList<Verre>();
     }
 
@@ -37,16 +38,19 @@ public class Comptoir {
         return tonneauOrange;
     }
 
+    /**
+     * Requiert nbreVerresARaisin inferieur a tonneauRaisin.getQuantite() et
+     * nbreVerresAOrange inferieur a tonneauOrange.getQuantite()
+     */
     public void RemplirTous() {
-        for(int i=0;i<verres.size();i++){
-            if (verres.get(i).isEstARaisin()){
+        assert tonneauOrange.getQuantite() + tonneauRaisin.getQuantite() >= verres.size() : "quantites en tonneaux insuffisantes pour remplir tous les verres";
+        for (int i = 0; i < verres.size(); i++) {
+            if (verres.get(i).isEstARaisin()) {
                 tonneauRaisin.remplir(verres.get(i));
-            }
-            else{
+            } else {
                 tonneauOrange.remplir(verres.get(i));
             }
         }
     }
-
-   
+    
 }
