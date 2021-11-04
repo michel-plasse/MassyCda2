@@ -21,11 +21,15 @@ public class Cantine {
         this.assiettes=assiettes;
     }
 
+    public boolean peutServirTous(){
+        return cuisine.getQuantite()+bac.getQuantite()>=assiettes;
+    }
+    
     /**
      * remplis les assiettes jusqu'a ce que tout le monde soit servi
      */
     public void servirTous() {
-        assert cuisine.getQuantite()+bac.getQuantite()>=assiettes : "quantite de plats insuffisante en cuisine";
+        assert  peutServirTous(): "quantite de plats insuffisante en cuisine";
         Recipient usagers = new Recipient(0,assiettes);
         for(int i = assiettes;i>0;i--){
             if(bac.estVide()){
@@ -45,6 +49,5 @@ public class Cantine {
             }
             bac.mettreUnDans(usagers);
         }
-    }
-    
+    }    
 }

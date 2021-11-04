@@ -19,9 +19,11 @@ public class DirecteurCommercial extends Commercial {
     public ArrayList<Commercial> getCommerciaux() {
         return commerciaux;
     }
+    
 
     @Override
     public double getSalaire() {
+        
         double autresCommissions=0;
         for (int i=0;i<commerciaux.size();i++){
             autresCommissions += commerciaux.get(i).getCommission();
