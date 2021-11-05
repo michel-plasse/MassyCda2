@@ -14,7 +14,7 @@ public class Entreprise {
     private ArrayList<Salarie> salaries;
     
     public Entreprise(){
-        
+        salaries = new ArrayList<>();
     }
     
     public ArrayList<Salarie> getSalaries(){
@@ -25,6 +25,7 @@ public class Entreprise {
         double result = 0;
         for(int i=0; i<salaries.size(); i++){
             result += salaries.get(i).getSalaire();
+            System.out.println(salaries.get(i).getSalaire());
         }
         return result;
     }

@@ -21,6 +21,7 @@ public class DirecteurCommercialTest {
         instance.setCommission(1000); 
         Commercial commercial = new Commercial(1500);
         commercial.setCommission(1000);
+        
         instance.getCommerciaux().add(commercial);
         commercial = new Commercial(1600);
         commercial.setCommission(2000);
