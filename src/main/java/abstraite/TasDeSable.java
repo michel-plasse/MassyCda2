@@ -47,4 +47,12 @@ public class TasDeSable extends Iteration {
     public boolean estTerminé() {
         return (tasInitial.estVide()&&brouette.estVide());
     } 
+
+    @Override
+    public String toString() {
+        return tasInitial.getQuantite() + "/" + tasInitial.getCapacite()+" "
+               + brouette.getQuantite() + "/" + brouette.getCapacite() + " "
+               + tasFinal.getQuantite() + "/" + tasFinal.getCapacite();
+    }
+    
 }
