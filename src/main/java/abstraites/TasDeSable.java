@@ -36,17 +36,20 @@ public class TasDeSable extends Iteration{
 
     @Override
     public void commencer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void avancer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (brouette.estPlein() || tasA.estVide()){
+            brouette.viderDans(tasB);
+        }else{
+            tasA.mettreUnDans(brouette);
+        }
     }
 
     @Override
     public boolean estTermine() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return tasA.estVide() && brouette.estVide();
     }
     
     
