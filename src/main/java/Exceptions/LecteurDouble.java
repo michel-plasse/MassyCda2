@@ -10,30 +10,25 @@ package Exceptions;
  */
 public class LecteurDouble {
 
-    public String inputString;
+    public Double value;
 
     public LecteurDouble() {
 
     }
 
     public void input(String s) {
-        this.inputString = s;
+        try {
+            value = Double.parseDouble(s);
+        } catch (NumberFormatException exc) {
+            System.out.println("Error string is not parsable");
+            value = null;
+        }
     }
 
     public Double getValue() {
-        double result;
-        try {
-            result = Double.parseDouble(this.inputString);
-        } catch (Exception e) {
-            System.out.println("Error string is not parsable");
-            return null;
-        }
-        return result;
+        return value;
     };
     
-    
-    public String getInput() {
-        return this.inputString;
-    }
+
 
 }
