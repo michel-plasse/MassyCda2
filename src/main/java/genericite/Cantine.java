@@ -7,18 +7,27 @@ package genericite;
 
 import recipient.Recipient;
 
-/**
- *
- * @author Stagiaire
- */
 public class Cantine {
 
-    Cantine(int i, Recipient bac, Recipient cantine) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private Recipient bac, cuisine;
+    private int assiettes;
+
+    Cantine(int assiettes, Recipient bac, Recipient cuisine) {
+        this.assiettes = assiettes;
+        this.bac = bac;
+        this.cuisine = cuisine;
     }
 
+    private Recipient usager = new Recipient(0, assiettes);
+
     void servirTous() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for (int i = assiettes; i <= cuisine.getQuantite(); i++) {
+            if (bac.estVide()) {
+                cuisine.remplir(bac);
+            }
+            bac.remplir(usager);
+        }
+
     }
 
 }

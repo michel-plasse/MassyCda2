@@ -19,8 +19,11 @@ public class ComptoirTest {
         Comptoir instance = new Comptoir(5, 7);
 
         instance.getVerres().add(new Verre(0, 1, true));
+        System.out.println("add one glass of grape juice");
         instance.getVerres().add(new Verre(0, 1, false));
+        System.out.println("add one glass of orange juice");
         instance.getVerres().add(new Verre(0, 1, true));
+        System.out.println("add one glass of grape juice");
 
         instance.remplirTous();
 

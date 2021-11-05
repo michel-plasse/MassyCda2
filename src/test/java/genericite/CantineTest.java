@@ -28,20 +28,41 @@ public class CantineTest {
     }
 
     @Test
+    // à finir
     public void testServirTous() {
-        System.out.println("Test servirTous");
-        Recipient bac=new Recipient(0,5);
-        Recipient cuisine=new Recipient(22,22);
-        
-        Cantine instance = new Cantine(15, bac, cuisine);
+        System.out.println("Test peutServirTous");
+        Recipient bac = new Recipient(0, 5);
+        Recipient cuisine = new Recipient(22, 22);
+
+        Cantine instance = new Cantine(9, bac, cuisine);
+
+        instance.servirTous();
+        assertTrue(cuisine.getQuantite() >= 9);
     }
 
     @Test
+    // à finir
     public void testServirLePlusPossible() {
+        System.out.println("Test peutServirTous");
+        Recipient bac = new Recipient(0, 5);
+        Recipient cuisine = new Recipient(22, 22);
+
+        Cantine instance = new Cantine(9, bac, cuisine);
+
+        instance.servirTous();
+        assertTrue(cuisine.getQuantite() >= 9);
     }
 
     @Test
+    // à finir
     public void testResteAServir() {
+        System.out.println("Test peutServirTous");
+        Recipient bac = new Recipient(0, 5);
+        Recipient cuisine = new Recipient(22, 22);
 
+        Cantine instance = new Cantine(9, bac, cuisine);
+
+        instance.servirTous();
+        assertTrue(cuisine.getQuantite() >= 9);
     }
 }
