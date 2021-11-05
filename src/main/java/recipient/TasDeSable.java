@@ -26,11 +26,12 @@ public class TasDeSable {
     }
 
     /**
-     * Déplace le sable du tas initial vers le tas final. Requiert que la
-     * brouette soit vide au départ. Hypothèse à discuter, si nous la
-     * supprimons, il faut revoir le sens et les ocntrats de cette opération.
-     * Quel est le prérequis avec cette hypothèse, et quel serait-il sans elle ?
-     * Garantit que getTasInitial().estVide() et getBrouette().estVide().
+     * Déplace le sable du tas initial vers le tas final. Requiert que
+     * la brouette soit vide au départ. Hypothèse à discuter, si nous
+     * la supprimons, il faut revoir le sens et les ocntrats de cette
+     * opération. Quel est le prérequis avec cette hypothèse, et quel
+     * serait-il sans elle ? Garantit que getTasInitial().estVide() et
+     * getBrouette().estVide().
      */
     void deplacerTas() {
         assert peutDeplacerTas() : "Pas assez de place pour dans le tas final pour déplacer le tas initial.";
@@ -42,7 +43,7 @@ public class TasDeSable {
         }
 
     }
-    
+
     public boolean peutDeplacerTas() {
         return tasFinal.getEspaceLibre() >= tasInitial.getQuantite() + brouette.getQuantite();
     }
