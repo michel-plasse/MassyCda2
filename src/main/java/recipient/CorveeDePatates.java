@@ -33,7 +33,9 @@ public class CorveeDePatates {
    * @return 
    */
   public boolean aAssezDePatates() {
-      return true;
+          
+        return (panier.getQuantite() + tasDePatates.getQuantite()
+                >= marmite.getEspaceLibre());
+    }
   }
   
-}
