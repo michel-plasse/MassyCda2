@@ -10,7 +10,7 @@ import recipient.v3.Recipient;
  * 
  * @author thoma
  */
-public class Verre extends Recipient {
+public class Verre extends Recipient implements Comparable<Verre>{
     
     private boolean estARaisin;
     /**
@@ -27,5 +27,17 @@ public class Verre extends Recipient {
     public boolean getEstARaisin()
     {
         return this.estARaisin;
+    }
+    
+    @Override
+    public int compareTo(Verre autre){
+        int result = 0;
+        if(getCapacite()<autre.getCapacite()){
+            result = -1;
+        }
+        else if (getCapacite()>autre.getCapacite()){
+            result = 1;
+        }
+        return result;
     }
 }
